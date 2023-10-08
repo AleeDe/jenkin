@@ -1,11 +1,17 @@
 pipeline{
     agent   any
+    environment{
+        name="Ali"
+        Age=19
+    }
     stages{
-        stage("A"){
+        stage("Test"){
             steps{
                 sh'''
-                    echo "Hello"
+                    echo "Test"
                     ls
+                    echo "Name: ${name}"
+                    echo "Age: ${Age}"
                 '''
             }
             
