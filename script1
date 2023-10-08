@@ -4,6 +4,9 @@ pipeline{
         name="Ali"
         Age=19
     }
+    parameters{
+        string(name: "person",defaultValue: "Raza")
+    }
     stages{
         stage("Test"){
             steps{
@@ -12,6 +15,7 @@ pipeline{
                     ls
                     echo "Name: ${name}"
                     echo "Age: ${Age}"
+                    echo "Person: ${person}"
                 '''
             }
             
