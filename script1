@@ -20,6 +20,22 @@ pipeline{
             }
             
         }
+stage("Continue"){
+            input {
+                message "Should We continue"
+                ok "Yes Why not"
+                    }
+            steps{
+                sh'''
+                    echo "Test"
+                    ls
+                    echo "Name: ${name}"
+                    echo "Age: ${Age}"
+                    echo "Person: ${person}"
+                '''
+            }
+            
+        }
     }
     post{
         always{
